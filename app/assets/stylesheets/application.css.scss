@@ -1,0 +1,182 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+header {
+  background-color: black;
+}
+
+.outer-header {
+  display: inline-block;
+  border-right: 1px solid green;
+
+}
+
+//header {
+//  width: 100%;
+//  display: flex;
+//  flex-flow: row nowrap;
+//  justify-content: space-between;
+//  height: 80px;
+//  background-color: #404040;
+//}
+
+.header-text {
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  position: relative;
+  float: left;
+
+}
+
+.header-tools {
+
+  position: relative;
+  float: right;
+
+  margin-top: 30px;
+  margin-right: 10px;
+
+  a {
+
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+  }
+
+}
+
+.join-link {
+  background-color: green;
+  border: 1px solid gray;
+  border-radius: 3px;
+  display: inline-block;
+  width: 140px;
+  text-align: center;
+}
+
+.index-text {
+  background-color: white;
+  text-align: center;
+  margin-bottom: 8%;
+  padding-bottom: 2%;
+  h1 {
+    padding-top: 2%;
+    margin-top: 0;
+    margin-bottom: 1%;
+    font-size: 75px;
+    font-family: helvetica neue, lucida grande, sans-serif;
+  }
+}
+body{
+  background-color: #646464;
+
+}
+
+
+.index-quote {
+  img {
+    margin-right: 2%;
+    float: right;
+  }
+  p{
+    color: white;
+    text-align: center;
+//    display: inline;
+  }
+
+}
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.clearfix {
+  clear: both;
+  zoom: 1;
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+//.wrapper {
+//  margin: auto;
+//  width: 980px;
+//}
+//
+//.signed_in{
+//  margin: auto;
+//  width: 1400px;
+//
+//}
+
+/*td {*/
+/*width: 25%;*/
+/*margin:auto;*/
+/*text-align: center;*/
+/*border:solid orange 1px;*/
+/*}*/
+
+/*th {*/
+/*width:25%;*/
+/*margin:auto;*/
+/*text-align: center;*/
+/*}*/
+
+/* ----- =columns ----- */
+
+.one_half { 	 width:460px; }
+.one_third {	 width:300px; }
+.two_third {	 width:620px; }
+.one_fourth {	 width:220px; }
+.three_fourth { width:700px; }
+.full_column {	 width:940px; }
+
+article {
+  display: inline-block;
+//  position:relative;
+//  clear: both
+//  margin-left:20px;
+//  margin-bottom:0px;
+//  float:left;
+//  border: solid #000 1px;
+}
+//
+//
+//
+//
+//
+///* DEMO STYLE - Box Outlines  */
+//
+//article {
+//  box-sizing:border-box;
+//  border: solid #000 1px;
+//  padding: 10px;
+//}
+//
+//section {
+//  box-sizing:border-box;
+//  border: solid red 1px;
+//  padding: 5px 0 5px 0;
+//}

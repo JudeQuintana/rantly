@@ -2,13 +2,31 @@
 <html>
 <head>
   <title>Rantly</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<header>
+  <div class="clearfix">
+    <div class="outer-header">
+      <h1 class="header-text">Rant.ly</h1>
+    </div>
+    <div class="header-tools">
 
+      <%= link_to "Login", "/" %>
+
+      <div class="join-link">
+        <%= link_to "Join", "/" %>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<div class="wrapper">
+  <%= yield %>
+</div>
 </body>
 </html>
