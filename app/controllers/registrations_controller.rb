@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
     @user = User.new(allowed_params)
 
     if @user.save
-      redirect_to :back, notice: "Thanks for registering!"
+      redirect_to root_path, notice: "Thanks for registering!"
     else
       render :new
     end
