@@ -26,6 +26,11 @@
 </header>
 
 <div class="wrapper">
+  <% if flash[:notice] %>
+    <div class="notice">
+      <p><%= flash[:notice] %></p>
+    </div>
+  <% end %>
   <%= yield %>
 </div>
 </body>

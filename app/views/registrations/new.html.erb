@@ -1,50 +1,73 @@
 <div>
   <section>
-    <article>
+    <article class="one_third"></article>
+    <article class="one_third registration">
 
-      <% if flash[:notice] %>
-        <div>
-          <p>Thanks for registering!</p>
+      <% if @user.errors.any? %>
+        <div class="errors">
+          <p>Your registration is incomplete!</p>
         </div>
-      <%end %>
+
+      <% end %>
+
+
       <%= form_for @user, url: registrations_path do |f| %>
         <div>
           <%= f.label(:username) %>
+          <% if @user.errors[:username] %>
+            <p class="errors"><%= @user.errors[:username].first %></p>
+          <% end %>
           <%= f.text_field(:username) %>
         </div>
         <div>
           <%= f.label(:password) %>
+          <% if @user.errors[:password] %>
+            <p class="errors"><%= @user.errors[:password].first %></p>
+          <% end %>
           <%= f.password_field :password %>
         </div>
         <div>
           <%= f.label(:first_name) %>
+          <% if @user.errors[:first_name] %>
+            <p class="errors"><%= @user.errors[:first_name].first %></p>
+          <% end %>
           <%= f.text_field(:first_name) %>
         </div>
         <div>
           <%= f.label(:last_name) %>
+          <% if @user.errors[:last_name] %>
+            <p class="errors"><%= @user.errors[:last_name].first %></p>
+          <% end %>
           <%= f.text_field(:last_name) %>
         </div>
         <div>
           <%= f.label(:bio) %>
+          <% if @user.errors[:bio] %>
+            <p class="errors"><%= @user.errors[:bio].first %></p>
+          <% end %>
           <%= f.text_field(:bio) %>
         </div>
         <div>
           <%= f.label(:rant_freq, 'Daily') %>
-          <%= f.radio_button :rant_freq,'Daily' %>
+          <%= f.radio_button :rant_freq, 'Daily' %>
         </div>
         <div>
           <%= f.label(:rant_freq, 'Weekly') %>
-          <%= f.radio_button :rant_freq,'Weekly' %>
+          <%= f.radio_button :rant_freq, 'Weekly' %>
         </div>
         <div>
           <%= f.label(:rant_freq, 'Monthly') %>
-          <%= f.radio_button :rant_freq,'Monthly' %>
+          <%= f.radio_button :rant_freq, 'Monthly' %>
         </div>
+        <% if @user.errors[:rant_freq] %>
+          <p class="errors"><%= @user.errors[:rant_freq].first %></p>
+        <% end %>
         <div>
           <%= f.submit 'Register' %>
         </div>
-      <% end %>
+    <% end %>
 
     </article>
+    <article class="one_third"></article>
   </section>
 </div>

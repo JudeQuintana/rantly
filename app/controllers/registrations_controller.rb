@@ -7,7 +7,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(allowed_params)
 
-    if @user.save!
+    if @user.save
       redirect_to :back, notice: "Thanks for registering!"
     else
       render :new
