@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :ensure_authenticated_user
 
   def ensure_authenticated_user
-    redirect_to signin_path unless current_user
+     current_user
   end
 
   def current_user
