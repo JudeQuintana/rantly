@@ -14,27 +14,32 @@
       <h1 class="header-text"><%= link_to 'Rant.ly', '/' %></h1>
     </div>
 
-    <% unless current_user %>
-    <div class="header-tools">
-
-      <%= link_to "Login", signin_path %>
-
-      <div class="join-link">
-        <%= link_to "Join", new_registration_path,id:'join-link' %>
-      </div>
-
-    </div>
-      <% else %>
+    <% if current_user %>
 
       <div class="header-tools">
+        <div class="logged-in-links">
+          <%= link_to "Dashboard", "/" %>
+          <%= link_to "Following", "/" %>
+          <%= link_to "Favorites", "/" %>
+          <%= link_to "Search", "/" %>
+        </div>
+        <div class="join-link">
+          <%= link_to "Logout", signout_path, id: 'join-link' %>
+        </div>
+
+      </div>
+    <% else %>
+      <div class="header-tools">
+
+        <%= link_to "Login", signin_path %>
 
         <div class="join-link">
-          <%= link_to "Logout", signout_path, id:'join-link' %>
+          <%= link_to "Join", new_registration_path, id: 'join-link' %>
         </div>
 
       </div>
 
-      <% end %>
+    <% end %>
   </div>
 </header>
 

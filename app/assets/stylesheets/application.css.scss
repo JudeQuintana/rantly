@@ -21,9 +21,9 @@ html {
 
 /* errors & notices */
 
-.field_with_errors{
-  color:maroon;
-  display:inline;
+.field_with_errors {
+  color: maroon;
+  display: inline;
 }
 
 .errors {
@@ -38,10 +38,8 @@ html {
   margin-bottom: 1em;
 }
 
-
-
 .registration {
-  width:80%
+  width: 80%
 }
 
 header {
@@ -54,14 +52,7 @@ header {
 
 }
 
-//header {
-//  width: 100%;
-//  display: flex;
-//  flex-flow: row nowrap;
-//  justify-content: space-between;
-//  height: 80px;
-//  background-color: #404040;
-//}
+
 
 .header-text {
   color: white;
@@ -92,6 +83,8 @@ header {
     font-size: 30px;
   }
 
+
+
 }
 
 .join-link {
@@ -101,6 +94,20 @@ header {
   display: inline-block;
   width: 140px;
   text-align: center;
+}
+
+.logged-in-links {
+  display: inline-block;
+  margin-right: 250px;
+
+  a {
+    border-right: 1px solid green;
+    font-size: 20px;
+    color: white;
+  }
+  a:last-child{
+    border: none;
+  }
 }
 
 .index-text {
@@ -113,28 +120,27 @@ header {
     margin-top: 0;
     margin-bottom: 1%;
     font-size: 75px;
-//    font-family: helvetica neue, lucida grande, sans-serif;
+    //    font-family: helvetica neue, lucida grande, sans-serif;
   }
 }
-body{
+
+body {
   background-color: #646464;
 
 }
-
 
 .index-quote {
   img {
     margin-right: 2%;
     float: right;
   }
-  p{
+  p {
     color: white;
     text-align: center;
-//    display: inline;
+    //    display: inline;
   }
 
 }
-
 
 *, *:before, *:after {
   box-sizing: border-box;
@@ -180,22 +186,40 @@ body{
 
 /* ----- =columns ----- */
 
-.one_half { 	 width:460px; }
-.one_third {	 width:300px; }
-.two_third {	 width:620px; }
-.one_fourth {	 width:220px; }
-.three_fourth { width:700px; }
-.full_column {	 width:940px; }
+.one_half {
+  width: 460px;
+}
+
+.one_third {
+  width: 300px;
+}
+
+.two_third {
+  width: 620px;
+}
+
+.one_fourth {
+  width: 220px;
+}
+
+.three_fourth {
+  width: 700px;
+}
+
+.full_column {
+  width: 940px;
+}
 
 article {
   display: inline-block;
-//  position:relative;
-//  clear: both
-//  margin-left:20px;
-//  margin-bottom:0px;
-//  float:left;
-//  border: solid #000 1px;
+  //  position:relative;
+  //  clear: both
+  //  margin-left:20px;
+  //  margin-bottom:0px;
+  //  float:left;
+  //  border: solid #000 1px;
 }
+
 //
 //
 //
