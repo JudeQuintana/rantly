@@ -142,6 +142,14 @@ body {
 
 }
 
+
+#profile-img{
+//  width: 30%;
+//  height: 15%;
+////  margin: 20px;
+//  padding: 10px;
+}
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
@@ -160,11 +168,11 @@ body {
   }
 }
 
-//.wrapper {
-//  margin: auto;
-//  width: 980px;
-//}
-//
+.wrapper {
+  margin: auto;
+  width: 100%;
+}
+
 //.signed_in{
 //  margin: auto;
 //  width: 1400px;
@@ -187,15 +195,21 @@ body {
 /* ----- =columns ----- */
 
 .one_half {
-  width: 460px;
+  width: 48%;
+//  width: 460px;
+//  width: 576px;
 }
 
 .one_third {
-  width: 300px;
+  width: 32%;
+//  width: 300px;
+//  width: 384px;
 }
 
 .two_third {
-  width: 620px;
+  width: 65%;
+//  width: 620px;
+//  width: 768px;
 }
 
 .one_fourth {
