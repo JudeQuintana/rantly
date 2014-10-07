@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
       session[:user_id] = @user.id
 
-      redirect_to root_path, notice: "You're now logged in!"
+      redirect_to dashboard_path, notice: "You're now logged in!"
 
     else
       @user = User.new

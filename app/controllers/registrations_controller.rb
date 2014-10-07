@@ -1,4 +1,5 @@
 class RegistrationsController < ApplicationController
+  skip_before_action :ensure_authenticated_user
 
   def new
     @user = User.new
