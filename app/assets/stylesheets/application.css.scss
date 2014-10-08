@@ -130,16 +130,33 @@ body {
 }
 
 .index-quote {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  justify-content: space-around;
+
   img {
-    margin-right: 2%;
-    float: right;
+    margin: auto;
+    display: block;
   }
+
   p {
     color: white;
-    text-align: center;
     //    display: inline;
   }
 
+  div {
+    display: inline-block;
+  }
+}
+
+.quote-text {
+  flex-grow: 1;
+  flex-basis: 200px;
+}
+
+.quote-img {
+   width: 200px;
 }
 
 
@@ -207,7 +224,7 @@ body {
 }
 
 .two_third {
-  width: 65%;
+  width: 64%;
 //  width: 620px;
 //  width: 768px;
 }
@@ -233,6 +250,7 @@ article {
   //  float:left;
   //  border: solid #000 1px;
 }
+
 
 //
 //

@@ -10,10 +10,35 @@
       </div>
       <hr/>
 
+      <div>
+
+      <%= form_for [@user,@rant] do |f| %>
+        <%= f.label :title %>
+          <%= f.text_field :title %>
+
+          <%= f.label :body %>
+          <%= f.text_field :body %>
+
+          <%= f.submit %>
+          <%end %>
+
+      </div>
+
     </article>
 
     <article class="two_third">
-      this is a dashboard
+      <h1>My Rants</h1>
+
+      <% @user.rants.each do |rant| %>
+        <div>
+          <%= image_tag @user.image %>
+        </div>
+      <div>
+        <%= rant.title %>
+        <%= rant.body %>
+      </div>
+      <%end %>
+
 
 
     </article>
