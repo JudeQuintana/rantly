@@ -1,26 +1,26 @@
 <div>
   <section>
-    <article class="one_third">
+    <article class="one_third left-container">
 
       <div id="profile-img">
-        <%= link_to edit_user_path(@user) do %>
-          <%= image_tag @user.image %>
-          <% end %>
-        <p><%=  @user.full_name %></p>
+        <%= link_to edit_user_path(current_user) do %>
+          <%= image_tag current_user.image %>
+        <% end %>
+        <p><%= fullname(current_user) %></p>
       </div>
       <hr/>
 
       <div>
 
-      <%= form_for [@user,@rant] do |f| %>
-        <%= f.label :title %>
+        <%= form_for new_rant do |f| %>
+          <%= f.label :title %>
           <%= f.text_field :title %>
 
           <%= f.label :body %>
           <%= f.text_field :body %>
 
           <%= f.submit %>
-          <%end %>
+        <% end %>
 
       </div>
 
@@ -29,17 +29,11 @@
     <article class="two_third">
       <h1>My Rants</h1>
 
-      <% @user.rants.limit(3).each do |rant| %>
-        <div>
-          <%= image_tag @user.image %>
-        </div>
-      <div>
-        <%= rant.title %>
-        <%= rant.body %>
-      </div>
-      <%end %>
+      <%= render my_rants %>
+      <hr/>
+      <h1>Latest Rants</h1>
 
-
+      <%= render latest_rants %>
 
     </article>
   </section>

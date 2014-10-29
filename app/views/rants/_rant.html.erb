@@ -1,0 +1,14 @@
+<div>
+
+  <div>
+    <%= image_tag rant.user.image %>
+  </div>
+  <div>
+    <%= rant.title %>
+    <br/>
+    <%= rant.body %>
+  </div>
+  <% if current_user == rant.user %>
+    <%= button_to "Delete", rant_path(rant.id), method: :delete %>
+  <% end %>
+</div>

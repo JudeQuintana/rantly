@@ -6,15 +6,24 @@ class RantsController < ApplicationController
     if @rant.save
       redirect_to dashboard_path, notice: "Rant created!"
     else
-      @user = User.find_by(id: allowed_params[:user_id])
+      @user = User.find_by(id: params[:user_id])
       render 'dashboard/index'
     end
+  end
+
+  def destroy
+
+    @rant = Rant.find_by(id: params[:id])
+    @rant.destroy
+
+    redirect_to :back, notice: "Rant Deleted!"
+
   end
 
   private
 
   def allowed_params
-    params.require(:rant).permit(:title, :body).merge(user_id: params[:user_id])
+    params.require(:rant).permit(:title, :body).merge(user_id: current_user.id)
   end
 
 end
