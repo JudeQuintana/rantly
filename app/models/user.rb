@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   validates :username, :presence => true, uniqueness: {case_sensitive: false}
 
-
+  def full_name
+    self.first_name.capitalize + " " + self.last_name.capitalize
+  end
 
 end

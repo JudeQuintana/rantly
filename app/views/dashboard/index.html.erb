@@ -6,7 +6,7 @@
         <%= link_to edit_user_path(@user) do %>
           <%= image_tag @user.image %>
           <% end %>
-        <%= content_tag :p, @user.first_name + ' ' + @user.last_name %>
+        <p><%=  @user.full_name %></p>
       </div>
       <hr/>
 
@@ -29,7 +29,7 @@
     <article class="two_third">
       <h1>My Rants</h1>
 
-      <% @user.rants.each do |rant| %>
+      <% @user.rants.limit(3).each do |rant| %>
         <div>
           <%= image_tag @user.image %>
         </div>
