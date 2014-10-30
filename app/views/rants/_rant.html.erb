@@ -8,6 +8,13 @@
     <br/>
     <%= rant.body %>
   </div>
+  <% unless is_me?(rant.user)%>
+    <% if follow_user?(rant.user) %>
+      <%= unfollow_button(rant.user) %>
+    <% else %>
+      <%= follow_button(rant.user) %>
+    <% end %>
+  <% end %>
   <% if current_user == rant.user %>
     <%= button_to "Delete", rant_path(rant.id), method: :delete %>
   <% end %>

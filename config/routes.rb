@@ -12,8 +12,10 @@ Rails.application.routes.draw do
 
   resources :registrations, only: [:new,:create]
 
-  resources :users
+  resources :users do
+    post 'follow' => 'following_relationships#create'
+    delete 'unfollow' => 'following_relationships#destroy'
+  end
   resources :rants, only: [:create, :destroy]
-
 
 end

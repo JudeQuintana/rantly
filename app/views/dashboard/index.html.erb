@@ -4,8 +4,10 @@
 
       <div id="profile-img">
         <%= link_to edit_user_path(current_user) do %>
+          <div class="thumbnail">
           <%= image_tag current_user.image %>
-        <% end %>
+          </div>
+      <% end %>
         <p><%= fullname(current_user) %></p>
       </div>
       <hr/>
