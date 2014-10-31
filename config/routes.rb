@@ -10,12 +10,15 @@ Rails.application.routes.draw do
 
   get "dashboard" => "dashboard#index", as: :dashboard
 
-  resources :registrations, only: [:new,:create]
+  resources :registrations, only: [:new, :create]
 
   resources :users do
-    post 'follow' => 'following_relationships#create'
-    delete 'unfollow' => 'following_relationships#destroy'
   end
+
+  get 'following' => 'following_relationships#index'
+  post 'follow/:id' => 'following_relationships#create', as: :follow
+  delete 'follow/:id' => 'following_relationships#destroy'
+
   resources :rants, only: [:create, :destroy]
 
 end

@@ -4,11 +4,11 @@ module UserHelper
   end
 
   def follow_button(user)
-    button_to 'Follow', user_follow_path(user)
+    button_to 'Follow', follow_path(user)
     end
 
   def unfollow_button(user)
-    button_to 'Unfollow', user_unfollow_path(user), method: :delete
+    button_to 'Unfollow', follow_path(user), method: :delete
   end
 
   def follow_user?(user)
