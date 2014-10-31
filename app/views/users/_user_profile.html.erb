@@ -1,0 +1,13 @@
+<div>
+  <%= image_tag user.image %>
+  <p>Rant Frequency: <%= user.rant_freq %></p>
+  <p>Bio: <%= user.bio %></p>
+</div>
+
+<% unless is_me?(user)%>
+  <% if follow_user?(user) %>
+    <%= unfollow_button(user) %>
+  <% else %>
+    <%= follow_button(user) %>
+  <% end %>
+<% end %>

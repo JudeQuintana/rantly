@@ -1,14 +1,16 @@
 <div>
 
   <div>
-    <%= image_tag rant.user.image %>
+    <%= link_to user_path(rant.user) do %>
+      <%= image_tag rant.user.image %>
+    <% end %>
   </div>
   <div>
     <%= rant.title %>
     <br/>
     <%= link_to rant.body, rant_path(rant) %>
   </div>
-  <% unless is_me?(rant.user)%>
+  <% unless is_me?(rant.user) %>
     <% if follow_user?(rant.user) %>
       <%= unfollow_button(rant.user) %>
     <% else %>

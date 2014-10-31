@@ -4,9 +4,11 @@ class UsersController < ApplicationController
 
   end
 
-  def create
+  def show
+    @user = User.find_by(id: params[:id])
 
   end
+
 
   def edit
 
