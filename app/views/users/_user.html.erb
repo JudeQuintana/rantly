@@ -1,3 +1,11 @@
 <div>
   <%= image_tag user.image %>
 </div>
+
+<% unless is_me?(user)%>
+  <% if follow_user?(user) %>
+    <%= unfollow_button(user) %>
+  <% else %>
+    <%= follow_button(user) %>
+  <% end %>
+<% end %>

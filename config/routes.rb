@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   post 'follow/:id' => 'following_relationships#create', as: :follow
   delete 'follow/:id' => 'following_relationships#destroy'
 
-  resources :rants, only: [:create, :destroy]
+  resources :rants, only: [:show,:create, :destroy]
 
 end

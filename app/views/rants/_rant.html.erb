@@ -6,7 +6,7 @@
   <div>
     <%= rant.title %>
     <br/>
-    <%= rant.body %>
+    <%= link_to rant.body, rant_path(rant) %>
   </div>
   <% unless is_me?(rant.user)%>
     <% if follow_user?(rant.user) %>

@@ -20,6 +20,10 @@ class RantsController < ApplicationController
 
   end
 
+  def show
+    @rant = Rant.find_by(id: params[:id])
+  end
+
   private
 
   def allowed_params
