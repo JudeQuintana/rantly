@@ -13,6 +13,8 @@
 
   <%= follow_button(rant.user) %>
 
+  <%= favorite_button(rant) %>
+
   <% if is_me?(rant.user) %>
     <%= button_to "Delete", rant_path(rant.id), method: :delete %>
   <% end %>

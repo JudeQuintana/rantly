@@ -13,6 +13,16 @@ module UserHelper
     end
   end
 
+  def favorite_button(rant)
+    unless is_me?(rant.user)
+      if fav = current_user.favorited?(rant)
+        button_to 'Unfavorite', rant_favorite_path(rant, fav), method: :delete
+      else
+        button_to 'Favorite', rant_favorites_path(rant)
+      end
+    end
+  end
+
   def is_me?(user)
     current_user == user
   end

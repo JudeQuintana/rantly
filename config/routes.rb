@@ -15,10 +15,16 @@ Rails.application.routes.draw do
   resources :users do
   end
 
+  resources :rants, only: [:show, :create, :destroy] do
+    resources :favorites, only: [:index, :create, :destroy]
+  end
   get 'following' => 'following_relationships#index'
   post 'follow/:id' => 'following_relationships#create', as: :follow
   delete 'follow/:id' => 'following_relationships#destroy'
 
-  resources :rants, only: [:show,:create, :destroy]
+  # get 'favorites' => 'favorites#index'
+  # post 'favorite/:id' => 'favorites#create', as: :favorite
+  # delete 'favorite/:id' => 'favaorites#destroy'
+
 
 end

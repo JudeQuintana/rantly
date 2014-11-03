@@ -13,7 +13,7 @@
 
       <hr/>
 
-      <%= render partial: 'rants/new_rant', locals: {rant: @dashboard.new_rant} %>
+      <%= render partial: 'rants/new_rant', object: @dashboard.new_rant, as: :rant %>
 
     </article>
 
