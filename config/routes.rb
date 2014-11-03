@@ -16,8 +16,9 @@ Rails.application.routes.draw do
   end
 
   resources :rants, only: [:show, :create, :destroy] do
-    resources :favorites, only: [:index, :create, :destroy]
+    resources :favorites, only: [:create, :destroy]
   end
+  get 'favorites', to: 'favorites#index'
   get 'following' => 'following_relationships#index'
   post 'follow/:id' => 'following_relationships#create', as: :follow
   delete 'follow/:id' => 'following_relationships#destroy'
