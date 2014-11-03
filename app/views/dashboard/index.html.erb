@@ -10,20 +10,22 @@
           <p><%= fullname(current_user) %></p>
         <% end %>
       </div>
+
       <hr/>
 
-      <%= render partial: 'rants/new_rant', locals: {rant: @rant} %>
+      <%= render partial: 'rants/new_rant', locals: {rant: @dashboard.new_rant} %>
 
     </article>
 
     <article class="two_third right-container">
       <h1>My Rants</h1>
 
-      <%= render my_rants %>
+
+      <%= render @dashboard.my_rants %>
       <hr/>
       <h1>Latest Rants</h1>
 
-      <%= render latest_rants %>
+      <%= render @dashboard.latest_rants %>
 
     </article>
   </section>

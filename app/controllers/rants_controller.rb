@@ -6,6 +6,7 @@ class RantsController < ApplicationController
     if @rant.save
       redirect_to dashboard_path, notice: "Rant created!"
     else
+      @dashboard = Dashboard.new(current_user, @rant)
       @user = User.find_by(id: params[:user_id])
       render 'dashboard/index'
     end

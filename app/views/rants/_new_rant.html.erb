@@ -1,16 +1,16 @@
 <div>
 
-  <%= form_for @rant do |f| %>
+  <%= form_for rant do |f| %>
 
     <%= f.label :title %>
-    <% if @rant.errors[:title] %>
-      <p class="errors"><%= @rant.errors[:title].first %></p>
+    <% if rant.errors[:title] %>
+      <p class="errors"><%= rant.errors[:title].first %></p>
     <% end %>
     <%= f.text_field :title %>
 
     <%= f.label :body %>
-    <% if @rant.errors[:body] %>
-      <p class="errors"><%= @rant.errors[:body].first %></p>
+    <% if rant.errors[:body] %>
+      <p class="errors"><%= rant.errors[:body].first %></p>
     <% end %>
     <%= f.text_field :body %>
 

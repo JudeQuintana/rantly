@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
 
   def index
-    @rant = Rant.new
+    @dashboard = Dashboard.new(current_user)
   end
 end
