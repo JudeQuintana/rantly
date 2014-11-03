@@ -5,20 +5,18 @@ class FollowingRelationshipsController < ApplicationController
   end
 
   def create
-    user = User.find_by(id: params[:id])
-
-    current_user.followed_users << user
+    current_user.follow(user)
     redirect_to :back
   end
 
   def destroy
-
-    user = User.find_by(id: params[:id])
-
-    current_user.followed_users.delete(user)
-
+    current_user.unfollow(user)
     redirect_to :back
-
   end
 
+  private
+
+  def user
+    User.find_by(id: params[:id])
+  end
 end
