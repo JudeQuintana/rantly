@@ -13,7 +13,7 @@
 
   <%= follow_button(rant.user) %>
 
-  <% unless is_me?(rant.user) %>
+  <% if is_me?(rant.user) %>
     <%= button_to "Delete", rant_path(rant.id), method: :delete %>
   <% end %>
 </div>

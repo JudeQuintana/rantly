@@ -3,35 +3,16 @@
     <article class="one_third left-container">
 
       <div id="profile-img">
-        <%= link_to edit_user_path(current_user) do %>
           <div class="thumbnail">
             <%= image_tag current_user.image %>
           </div>
+        <%= link_to edit_user_path(current_user) do %>
+          <p><%= fullname(current_user) %></p>
         <% end %>
-        <p><%= fullname(current_user) %></p>
       </div>
       <hr/>
 
-      <div>
-
-        <%= form_for @rant do |f| %>
-
-          <%= f.label :title %>
-          <% if @rant.errors[:title] %>
-            <p class="errors"><%= @rant.errors[:title].first %></p>
-          <% end %>
-          <%= f.text_field :title %>
-
-          <%= f.label :body %>
-          <% if @rant.errors[:body] %>
-            <p class="errors"><%= @rant.errors[:body].first %></p>
-          <% end %>
-          <%= f.text_field :body %>
-
-          <%= f.submit %>
-        <% end %>
-
-      </div>
+      <%= render partial: 'rants/new_rant', locals: {rant: @rant} %>
 
     </article>
 
