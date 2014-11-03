@@ -5,9 +5,9 @@
       <div id="profile-img">
         <%= link_to edit_user_path(current_user) do %>
           <div class="thumbnail">
-          <%= image_tag current_user.image %>
+            <%= image_tag current_user.image %>
           </div>
-      <% end %>
+        <% end %>
         <p><%= fullname(current_user) %></p>
       </div>
       <hr/>
@@ -18,8 +18,8 @@
 
           <%= f.label :title %>
           <% if @rant.errors[:title] %>
-          <p class="errors"><%= @rant.errors[:title].first %></p>
-        <% end %>
+            <p class="errors"><%= @rant.errors[:title].first %></p>
+          <% end %>
           <%= f.text_field :title %>
 
           <%= f.label :body %>

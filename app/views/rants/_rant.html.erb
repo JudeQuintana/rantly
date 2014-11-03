@@ -10,9 +10,10 @@
     <br/>
     <%= link_to rant.body, rant_path(rant) %>
   </div>
-  <%= render partial: 'following_relationships/follow_buttons', locals: {user: rant.user} %>
 
-  <% if current_user == rant.user %>
+  <%= follow_button(rant.user) %>
+
+  <% unless is_me?(rant.user) %>
     <%= button_to "Delete", rant_path(rant.id), method: :delete %>
   <% end %>
 </div>

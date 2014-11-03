@@ -5,8 +5,7 @@
   <p>Bio: <%= user.bio %></p>
 </div>
 
-<%= render partial: 'following_relationships/follow_buttons', locals: {user: user} %>
-
+<%= follow_button(user) %>
 <h1>Current Rants</h1>
 <div>
   <%= render user.rants %>
