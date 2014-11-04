@@ -23,9 +23,4 @@ Rails.application.routes.draw do
   post 'follow/:id' => 'following_relationships#create', as: :follow
   delete 'follow/:id' => 'following_relationships#destroy'
 
-  # get 'favorites' => 'favorites#index'
-  # post 'favorite/:id' => 'favorites#create', as: :favorite
-  # delete 'favorite/:id' => 'favaorites#destroy'
-
-
 end

@@ -8,4 +8,6 @@ class Rant < ActiveRecord::Base
   validates :body, length: {minimum: 2}
 
   default_scope { order(id: :desc)}
+
+
 end

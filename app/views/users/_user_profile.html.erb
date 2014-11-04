@@ -8,5 +8,5 @@
 <%= follow_button(user) %>
 <h1>Current Rants</h1>
 <div>
-  <%= render user.rants %>
+  <%= render user.rants.sort_by{|rant| rant.favorites.count}.reverse %>
 </div>
