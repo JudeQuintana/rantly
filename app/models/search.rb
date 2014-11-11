@@ -6,12 +6,18 @@ class Search
   end
 
   def results
-    unless @search_text.nil?
-      @users = User.where('last_name ilike ? ', "%#{@search_text}%")
-      return @rants = Rant.where(user: @users)
+    if @search_text.nil?
+      []
+    else
+      search_text = search_format
+      @users = User.where('last_name ilike :search or first_name ilike :search or username ilike :search', search: search_text)
+      @rants = Rant.where(user: @users)
     end
 
-    []
+  end
+
+  def search_format
+    "%#{@search_text}%"
   end
 
 
