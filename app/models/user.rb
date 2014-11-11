@@ -27,7 +27,7 @@ class User < ActiveRecord::Base
   end
 
   def favorited?(rant)
-    favorites.find_by(user_id: self.id, rant_id: rant.id)
+    favorites.find_by(user: self, rant: rant)
   end
 
 end

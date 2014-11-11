@@ -23,4 +23,5 @@ Rails.application.routes.draw do
   post 'follow/:id' => 'following_relationships#create', as: :follow
   delete 'follow/:id' => 'following_relationships#destroy'
 
+  resources :search, only: [:index]
 end
