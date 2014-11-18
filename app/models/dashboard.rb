@@ -15,4 +15,8 @@ class Dashboard
   def my_rants
     @user.rants
   end
+
+  def mentions
+    Rant.where('body LIKE :body',{:body => "%@#{@user.username}%"})
+  end
 end
