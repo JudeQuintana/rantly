@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   validates :first_name, :last_name, :bio, :rant_freq, :image, :presence => true
   validates :username, :presence => true, uniqueness: {case_sensitive: false}
 
+  mount_uploader :image, ImageUploader
 
   def follow_user?(user)
     followed_users.include?(user)

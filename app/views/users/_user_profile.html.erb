@@ -1,7 +1,8 @@
 <h1>Profile</h1>
-<div>
-    <%= image_tag user.image %>
+<div class="thumbnail">
+  <%= image_tag user.image_url %>
   <p>Rant Frequency: <%= user.rant_freq %></p>
+
   <p>Bio: <%= user.bio %></p>
 </div>
 

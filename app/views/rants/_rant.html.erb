@@ -1,9 +1,11 @@
 <div>
 
-  <div>
-    <%= link_to user_path(rant.user) do %>
-      <%= image_tag rant.user.image %>
-    <% end %>
+  <div class="profile-img">
+    <div class = "thumbnail">
+      <%= link_to user_path(rant.user) do %>
+        <%= image_tag rant.user.image_url %>
+      <% end %>
+    </div>
   </div>
   <div>
     <%= rant.title %>
