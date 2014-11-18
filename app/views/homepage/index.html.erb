@@ -1,29 +1,33 @@
-
-
 <div class="homepg-bg">
 
-    <div class="index-text">
+  <div class="index-text">
 
-      <h1>Rantly</h1>
+    <h1>Rantly</h1>
 
-      <p>Let it all out</p>
+    <p>Let it all out</p>
+  </div>
+
+  <% if session[:welcome_back] %>
+    <div>Welcome Back!</div>
+  <% else %>
+    <% session[:welcome_back] = true %>
+  <% end %>
+
+  <div class="index-quote">
+    <div class="quote-img">
+      <%= image_tag "/assets/jeff.jpeg", height: 128, width: 128 %>
+    </div>
+    <div class="quote-text">
+      <p>"Rantly has allowed a certain freedom I never though possible. Now I can rant
+        to the internet at large, without having to worry about my thoughts. I just type it
+        out, hit click, and feel the surge of relief. Thanks Rantly, you've truly made my
+        most inane rants heard. I remember a time when I wasn't able to truly express myslef. It's
+        really frustrating when you want to be heard and non one..."
+      </p>
+
+      <p>| Jeff Taggart, avid Ranter</p>
     </div>
 
-    <div class="index-quote">
-      <div class="quote-img">
-        <%= image_tag "/assets/jeff.jpeg", height: 128, width: 128 %>
-      </div>
-      <div class="quote-text">
-        <p>"Rantly has allowed a certain freedom I never though possible. Now I can rant
-          to the internet at large, without having to worry about my thoughts. I just type it
-          out, hit click, and feel the surge of relief. Thanks Rantly, you've truly made my
-          most inane rants heard. I remember a time when I wasn't able to truly express myslef. It's
-          really frustrating when you want to be heard and non one..."
-        </p>
-
-        <p>| Jeff Taggart, avid Ranter</p>
-      </div>
-
-    </div>
+  </div>
 
 </div>
