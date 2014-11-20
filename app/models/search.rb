@@ -11,7 +11,7 @@ class Search
     else
       search_text = search_format
       @users = User.where('last_name ilike :search or first_name ilike :search or username ilike :search', search: search_text)
-      @rants = Rant.where(user: @users) + Rant.where('title ilike :search', search: search_text)
+      @rants = Rant.where(user: @users) + Rant.where('title ilike :search or body ilike:search', search: search_text)
     end
 
   end
