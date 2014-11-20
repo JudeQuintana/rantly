@@ -7,10 +7,10 @@
       <% end %>
     </div>
   </div>
-  <div>
+  <div class="rant">
     <%= rant.title %>
     <br/>
-    <%= link_to rant.body, rant_path(rant) %>
+    <%= link_to markdown(rant.body).html_safe, rant_path(rant) %>
   </div>
 
   <%= follow_button(rant.user) %>
