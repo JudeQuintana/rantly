@@ -1,7 +1,7 @@
 <div>
 
   <div class="profile-img">
-    <div class = "thumbnail">
+    <div class="thumbnail">
       <%= link_to user_path(rant.user) do %>
         <%= image_tag rant.user.image_url %>
       <% end %>
@@ -12,6 +12,10 @@
     <br/>
     <%= link_to markdown(rant.body).html_safe, rant_path(rant) %>
   </div>
+  <% count = rant.num_favs %>
+  <% if count > 0 %>
+    <p>Favorited: <%= count%></p>
+  <% end %>
 
   <%= follow_button(rant.user) %>
 

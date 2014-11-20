@@ -9,5 +9,7 @@ class Rant < ActiveRecord::Base
 
   default_scope { order(id: :desc)}
 
-
+  def num_favs
+    favorites.count
+  end
 end
