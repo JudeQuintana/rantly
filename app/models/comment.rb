@@ -4,4 +4,8 @@ class Comment < ActiveRecord::Base
 
   belongs_to :commentable, polymorphic: true
 
+  def username
+    User.find(user_id).username
+  end
+
 end
