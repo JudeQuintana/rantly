@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   resources :rants, only: [:show, :create, :destroy] do
     resources :favorites, only: [:create, :destroy]
+    resources :comments, only:[:create]
   end
   get 'favorites', to: 'favorites#index'
   get 'following' => 'following_relationships#index'
