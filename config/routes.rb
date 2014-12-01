@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :registrations, only: [:new, :create]
 
   resources :users do
+    resources :comments, only:[:create]
   end
 
   resources :rants, only: [:show, :create, :destroy] do

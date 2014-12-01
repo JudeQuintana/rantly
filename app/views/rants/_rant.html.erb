@@ -25,14 +25,15 @@
     <%= button_to "Delete", rant_path(rant.id), method: :delete %>
   <% end %>
 
-  <h3>Comments</h3>
-  <% rant.comments.each do |comment| %>
-    <p><%= comment.username %> says <%= comment.body %></p>
-  <% end %>
   <h3>Create a comment</h3>
   <%= form_for Comment.new, url: rant_comments_path(rant) do |f| %>
     <%= f.text_field :body %>
     <%= f.submit %>
   <% end %>
+  <h3>Comments</h3>
+  <% rant.comments.each do |comment| %>
+    <p><%= comment.username %> says <%= comment.body %></p>
+<% end %>
+  <hr/>
 
 </div>
