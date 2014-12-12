@@ -9,4 +9,5 @@ module RantsHelper
     @markdown.render(content)
   end
 
+
 end

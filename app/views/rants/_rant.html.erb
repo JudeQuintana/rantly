@@ -10,7 +10,12 @@
   <div class="rant">
     <%= rant.title %>
     <br/>
-    <%= link_to markdown(rant.body).html_safe, rant_path(rant) %>
+    <% if defined?(dont_truncate) %>
+      <%= link_to markdown(rant.body).html_safe, rant_path(rant) %>
+    <% else %>
+      <%= link_to markdown(rant.body.truncate(300)).html_safe, rant_path(rant) %>
+    <% end %>
+
   </div>
   <% count = rant.num_favs %>
   <% if count > 0 %>
@@ -33,7 +38,7 @@
   <h3>Comments</h3>
   <% rant.comments.each do |comment| %>
     <p><%= comment.username %> says <%= comment.body %></p>
-<% end %>
+  <% end %>
   <hr/>
 
 </div>
