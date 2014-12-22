@@ -1,44 +1,48 @@
-<div>
+<% if rant.spam == false %>
+  <div>
 
-  <div class="profile-img">
-    <div class="thumbnail">
-      <%= link_to user_path(rant.user) do %>
-        <%= image_tag rant.user.image_url %>
-      <% end %>
+    <div class="profile-img">
+      <div class="thumbnail">
+        <%= link_to user_path(rant.user) do %>
+          <%= image_tag rant.user.image_url %>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="rant">
-    <%= rant.title %>
-    <br/>
-    <% if defined?(dont_truncate) %>
-      <%= link_to markdown(rant.body).html_safe, rant_path(rant) %>
-    <% else %>
-      <%= link_to markdown(rant.body.truncate(300)).html_safe, rant_path(rant) %>
+    <div class="rant">
+      <%= rant.title %>
+      <br/>
+      <% if defined?(dont_truncate) %>
+        <%= link_to markdown(rant.body).html_safe, rant_path(rant) %>
+      <% else %>
+        <%= link_to markdown(rant.body.truncate(300)).html_safe, rant_path(rant) %>
+      <% end %>
+
+    </div>
+    <% count = rant.num_favs %>
+    <% if count > 0 %>
+      <p>Favorited: <%= count %></p>
     <% end %>
 
+    <%= follow_button(rant.user) %>
+
+    <%= favorite_button(rant) %>
+
+    <%= spam_button(rant) %>
+
+    <% if is_me?(rant.user) %>
+      <%= button_to "Delete", rant_path(rant.id), method: :delete %>
+    <% end %>
+
+    <h3>Create a comment</h3>
+    <%= form_for Comment.new, url: rant_comments_path(rant) do |f| %>
+      <%= f.text_field :body %>
+      <%= f.submit %>
+    <% end %>
+
+    <% if rant.comments.count > 0 %>
+      <h3>Comments</h3>
+      <%= render rant.comments %>
+    <% end %>
+    <hr/>
   </div>
-  <% count = rant.num_favs %>
-  <% if count > 0 %>
-    <p>Favorited: <%= count %></p>
-  <% end %>
-
-  <%= follow_button(rant.user) %>
-
-  <%= favorite_button(rant) %>
-
-  <% if is_me?(rant.user) %>
-    <%= button_to "Delete", rant_path(rant.id), method: :delete %>
-  <% end %>
-
-  <h3>Create a comment</h3>
-  <%= form_for Comment.new, url: rant_comments_path(rant) do |f| %>
-    <%= f.text_field :body %>
-    <%= f.submit %>
-  <% end %>
-
-  <% if rant.comments.count > 0 %>
-    <h3>Comments</h3>
-    <%= render rant.comments %>
-  <% end %>
-  <hr/>
-</div>
+<% end %>

@@ -23,6 +23,14 @@ module UserHelper
     end
   end
 
+  def spam_button(rant)
+    unless is_me?(rant.user)
+      if rant.spam == false
+        button_to 'Spam', rant_path(rant), method: :put
+      end
+    end
+  end
+
   def is_me?(user)
     current_user == user
   end

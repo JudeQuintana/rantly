@@ -25,6 +25,14 @@ class RantsController < ApplicationController
     @rant = Rant.find_by(id: params[:id])
   end
 
+  def update
+    @rant = Rant.find_by(id: params[:id])
+
+    @rant.update(spam: true)
+
+    redirect_to :back, notice: "#{@rant.title} has been marked as spam."
+  end
+
   private
 
   def allowed_params
