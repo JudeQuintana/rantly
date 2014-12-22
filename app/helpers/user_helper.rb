@@ -31,6 +31,12 @@ module UserHelper
     end
   end
 
+  def delete_button(rant)
+    if is_me?(rant.user)
+      button_to "Delete", rant_path(rant.id), method: :delete
+    end
+  end
+
   def is_me?(user)
     current_user == user
   end

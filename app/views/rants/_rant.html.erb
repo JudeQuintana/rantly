@@ -29,9 +29,7 @@
 
     <%= spam_button(rant) %>
 
-    <% if is_me?(rant.user) %>
-      <%= button_to "Delete", rant_path(rant.id), method: :delete %>
-    <% end %>
+    <%= delete_button(rant) %>
 
     <h3>Create a comment</h3>
     <%= form_for Comment.new, url: rant_comments_path(rant) do |f| %>
